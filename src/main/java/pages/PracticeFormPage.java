@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class PracticeForm extends BasePage{
-    public PracticeForm(WebDriver driver){
+public class PracticeFormPage extends BasePage{
+    public PracticeFormPage(WebDriver driver){
         setDriver(driver);
         PageFactory.initElements
                 (new AjaxElementLocatorFactory(driver,

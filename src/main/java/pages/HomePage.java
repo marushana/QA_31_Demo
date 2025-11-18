@@ -19,10 +19,19 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//div[@class='category-cards']/div[2]")
     WebElement btnForms;
 
+    @FindBy(className = "card mt-4 top-card")
+    WebElement btnElements;
+
     public void clickBtnForms(){
         hideBanner();
         hideFooter();
         btnForms.click();
+    }
+
+    public void clickBtnElements(){
+        hideBanner();
+        hideFooter();
+        btnElements.click();
     }
 
 }

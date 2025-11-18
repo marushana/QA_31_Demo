@@ -4,7 +4,7 @@ import manager.AppManager;
 import org.testng.annotations.Test;
 import pages.FormsPage;
 import pages.HomePage;
-import pages.PracticeForm;
+import pages.PracticeFormPage;
 
 public class PracticeFormTests extends AppManager {
 
@@ -12,7 +12,7 @@ public class PracticeFormTests extends AppManager {
     public void studentRegFormPositiveTest(){
         new HomePage(getDriver()).clickBtnForms();
         new FormsPage(getDriver()).clickBtnPraccticeForm();
-        new PracticeForm(getDriver()).typePracticeForm();
+        new PracticeFormPage(getDriver()).typePracticeForm();
 
     }
 
