@@ -10,8 +10,8 @@ public class ElementsTests extends AppManager {
     @Test
     public void textBoxPositiveTest(){
         new HomePage(getDriver()).clickBtnElements();
-        //new ElementsPage(getDriver()).clickBtnTextBox();
-        //new TextBoxPage(getDriver()).typeTextBox();
+        new ElementsPage(getDriver()).clickBtnTextBox();
+        new TextBoxPage(getDriver()).typeTextBox();
     }
 
 }

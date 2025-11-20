@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class TextBoxPage extends BasePage{
-    public TextBoxPage(WebDriver driver){
+public class TextBoxPage extends BasePage {
+    public TextBoxPage(WebDriver driver) {
         setDriver(driver);
         PageFactory.initElements
                 (new AjaxElementLocatorFactory(driver,
@@ -24,10 +24,10 @@ public class TextBoxPage extends BasePage{
     @FindBy(xpath = "//div[@id = 'permanentAddress-wrapper']/div[2]")
     WebElement inputPermanentAddress;
 
-    public void typeTextBox(){
+    public void typeTextBox() {
         hideBanner();
         hideFooter();
-        inputFullName.sendKeys("Darya Rtiushun");
+        inputFullName.sendKeys("Darya Artiushun");
         inputUserEmail.sendKeys("marushana@mail.ru");
         inputCurrentAddress.sendKeys("Israel, Haifa, Sderot Sinai. 4A");
         inputPermanentAddress.sendKeys("Israel, Haifa, Alexander Yannay, 22");
