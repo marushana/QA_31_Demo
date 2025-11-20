@@ -21,7 +21,7 @@ public class TextBoxPage extends BasePage {
     WebElement inputUserEmail;
     @FindBy(xpath = "//textarea[@placeholder='Current Address']")
     WebElement inputCurrentAddress;
-    @FindBy(xpath = "//div[@id = 'permanentAddress-wrapper']/div[2]")
+    @FindBy(xpath = "//*[@id = 'permanentAddress']")
     WebElement inputPermanentAddress;
 
     public void typeTextBox() {

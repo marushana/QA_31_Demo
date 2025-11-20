@@ -19,7 +19,7 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//div[@class='category-cards']/div[2]")
     WebElement btnForms;
 
-    @FindBy(className = "card mt-4 top-card")
+    @FindBy(css = "div[class = 'card mt-4 top-card']")
     WebElement btnElements;
 
     public void clickBtnForms(){

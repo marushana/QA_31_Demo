@@ -1,5 +1,9 @@
 package pages;
 
+import dto.Student;
+import enums.Gender;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,59 +27,37 @@ public class PracticeFormPage extends BasePage{
     WebElement inputEmail;
     @FindBy(id = "userNumber")
     WebElement inputMobile;
+    @FindBy(id = "dateOfBirthInput")
+    WebElement fieledDateOfBirth;
 
-    public void typePracticeForm(){
+
+    public void typePracticeForm(Student student){
         hideBanner();
         hideFooter();
-        inputName.sendKeys("Daria");
-        inputLastName.sendKeys("Artiushin");
-        inputEmail.sendKeys("marushana@yandex.ru");
-        inputMobile.sendKeys("0123456789");
+        inputName.sendKeys(student.getName());
+        inputLastName.sendKeys(student.getLastName());
+        inputEmail.sendKeys(student.getEmail());
+        typeGender(student.getGender());
+        inputMobile.sendKeys(student.getMobile());
+        typeDateOfBirth(student.getDateOfBirth());
     }
 
-    public static class ElementsPage extends BasePage {
-        public ElementsPage(WebDriver driver){
-            setDriver(driver);
-            PageFactory.initElements
-                    (new AjaxElementLocatorFactory(driver,
-                            10), this);
-
-        }
-
-        @FindBy(xpath = "//span[text() = 'Text Box']")
-        WebElement btnTextBox;
-
-        public void clickBtnTextBox(){
-            btnTextBox.click();
-        }
+    private void typeGender(Gender gender){
+        WebElement btnGender = driver.findElement(By.xpath(gender.getLocator()));
+        btnGender.click();
     }
 
-    public static class TextBoxPage extends BasePage {
-        public TextBoxPage(WebDriver driver){
-            setDriver(driver);
-            PageFactory.initElements
-                    (new AjaxElementLocatorFactory(driver,
-                            10), this);
-
-        }
-
-        @FindBy(id = "userName")
-        WebElement inputFullName;
-        @FindBy(id = "userEmail")
-        WebElement inputUserEmail;
-        @FindBy(xpath = "//textarea[@placeholder='Current Address']")
-        WebElement inputCurrentAddress;
-        @FindBy(xpath = "//div[@id = 'permanentAddress-wrapper']/div[2]")
-        WebElement inputPermanentAddress;
-
-        public void typeTextBox(){
-            hideBanner();
-            hideFooter();
-            inputFullName.sendKeys("Darya Rtiushun");
-            inputUserEmail.sendKeys("marushana@mail.ru");
-            inputCurrentAddress.sendKeys("Israel, Haifa, Sderot Sinai. 4A");
-            inputPermanentAddress.sendKeys("Israel, Haifa, Alexander Yannay, 22");
-        }
+    private void typeDateOfBirth(String dateOfBirth){
+        fieledDateOfBirth.click();
+        String operationSystem = System.getProperty("os.name");
+        System.out.println(operationSystem);
+        if(operationSystem.startsWith("Win"))
+            fieledDateOfBirth.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        else  if(operationSystem.startsWith("Mac"))
+            fieledDateOfBirth.sendKeys(Keys.chord(Keys.COMMAND, "a"));
+        fieledDateOfBirth.sendKeys(dateOfBirth);
+        fieledDateOfBirth.sendKeys(Keys.ENTER);
 
     }
+
 }
