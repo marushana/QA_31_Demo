@@ -1,6 +1,9 @@
 package dto;
 
 import enums.Gender;
+import enums.Hobbies;
+
+import java.util.List;
 
 public class Student {
     private String name;
@@ -10,7 +13,7 @@ public class Student {
     private String mobile;
     private String dateOfBirth;
     private String subject;
-    private String hobbies;
+    private List<Hobbies> hobbies;
     private String picture;
     private String address;
     private String state;
@@ -20,7 +23,7 @@ public class Student {
     public Student(String name, String lastName,
                    String email, Gender gender,
                    String mobile, String dateOfBirth,
-                   String subject, String hobbies,
+                   String subject, List<Hobbies> hobbies,
                    String picture, String address,
                    String state, String city) {
         this.name = name;
@@ -93,11 +96,11 @@ public class Student {
         this.subject = subject;
     }
 
-    public String getHobbies() {
+    public List<Hobbies> getHobbies() {
         return hobbies;
     }
 
-    public void setHobbies(String hobbies) {
+    public void setHobbies(List<Hobbies> hobbies) {
         this.hobbies = hobbies;
     }
 
