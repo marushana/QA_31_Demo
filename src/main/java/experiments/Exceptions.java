@@ -33,8 +33,4 @@ public class Exceptions {
     private static void checkException() throws InterruptedException {
         Thread.sleep(3000);
     }
-
-    //lhlh
-    //lkhlh
-    //kjhlhlh
 }
